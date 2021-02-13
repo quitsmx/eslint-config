@@ -1,0 +1,12 @@
+.DS_Store
+.eslintcache
+.pnp
+.pnp.js
+*.bak
+*.lock
+*.log
+*.tgz
+**/coverage
+**/node_modules
+~*
+package-lock.json

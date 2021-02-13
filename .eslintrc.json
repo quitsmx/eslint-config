@@ -1,0 +1,33 @@
+{
+  "root": true,
+
+  "plugins": [
+    "@typescript-eslint",
+    "compat",
+    "jsx-a11y",
+    "prettierx",
+    "promise",
+    "react-hooks",
+    "react-perf",
+    "react",
+    "simple-import-sort",
+    "unicorn"
+  ],
+
+  "env": {
+    "node": true,
+    "es2017": true
+  },
+
+  "parserOptions": {
+    "ecmaFeatures": { "impliedStrict": true },
+    "ecmaVersion": 9,
+    "sourceType": "module"
+  },
+
+  "extends": ["eslint:recommended"],
+
+  "rules": {
+    "prettierx/options": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "offsetTernaryExpressions": true,
+  "arrowParens": "avoid",
+  "generatorStarSpacing": true,
+  "printWidth": 120,
+  "quoteProps": "consistent",
+  "semi": false,
+  "singleQuote": true,
+  "yieldStarSpacing": true
+}
