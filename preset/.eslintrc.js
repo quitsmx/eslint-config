@@ -141,6 +141,16 @@ const simpleImportSortOpts = {
   ],
 }
 
+// Enforce the style of numeric separators for decimal and binaries
+const numericSeparatorsStyleOpts = {
+  onlyIfContainsSeparator: true,
+  binary: {
+    onlyIfContainsSeparator: false,
+    minimumDigits: 5,
+    groupLength: 4,
+  },
+}
+
 module.exports = {
   // TypeScript
   parser: '@typescript-eslint/parser',
@@ -374,8 +384,8 @@ module.exports = {
     'unicorn/import-index': WARN,
     'unicorn/new-for-builtins': ON,
     'unicorn/no-array-push-push': WARN,
-    'unicorn/no-instanceof-array': ON,
     'unicorn/no-console-spaces': WARN,
+    'unicorn/no-instanceof-array': ON,
     'unicorn/no-new-buffer': ON,
     'unicorn/no-object-as-default-parameter': ON,
     'unicorn/no-process-exit': ON,
@@ -384,19 +394,24 @@ module.exports = {
     'unicorn/no-unused-properties': WARN,
     'unicorn/no-zero-fractions': WARN,
     'unicorn/prefer-add-event-listener': WARN,
-    'unicorn/prefer-array-index-of': WARN,
+    'unicorn/prefer-array-find': ON,
+    'unicorn/prefer-array-flat-map': WARN,
+    'unicorn/prefer-array-index-of': ON,
     'unicorn/prefer-array-some': WARN,
+    'unicorn/prefer-date-now': ON,
     'unicorn/prefer-dom-node-append': WARN,
     'unicorn/prefer-dom-node-dataset': WARN,
     'unicorn/prefer-dom-node-remove': WARN,
     'unicorn/prefer-dom-node-text-content': ON,
     'unicorn/prefer-includes': ON,
-    'unicorn/prefer-keyboard-event-key': ON,
+    'unicorn/prefer-keyboard-event-key': WARN,
     'unicorn/prefer-modern-dom-apis': WARN,
     'unicorn/prefer-negative-index': ON,
-    'unicorn/prefer-optional-catch-binding': ON,
+    'unicorn/prefer-regexp-test': WARN,
     'unicorn/prefer-spread': ON,
     'unicorn/prefer-string-starts-ends-with': WARN,
+    'unicorn/prefer-string-trim-start-end': WARN,
+    'unicorn/prefer-ternary': [WARN, 'only-single-line'],
     'unicorn/prefer-type-error': ON,
     'unicorn/throw-new-error': ON,
   },
@@ -419,6 +434,8 @@ module.exports = {
         '@typescript-eslint/no-redeclare': ON,
         '@typescript-eslint/no-require-imports': ON,
         '@typescript-eslint/prefer-optional-chain': WARN,
+        'unicorn/numeric-separators-style': [WARN, numericSeparatorsStyleOpts],
+        'unicorn/prefer-optional-catch-binding': ON,
       },
     },
   ],

@@ -33,7 +33,6 @@ module.exports = {
     '@typescript-eslint/no-unsafe-call': 1,
     '@typescript-eslint/no-unsafe-member-access': 0,
     '@typescript-eslint/no-unsafe-return': 1,
-    '@typescript-eslint/no-unused-vars-experimental': 1,
     '@typescript-eslint/no-unused-vars': 0,
     '@typescript-eslint/non-nullable-type-assertion-style': 1,
     '@typescript-eslint/prefer-includes': 1,

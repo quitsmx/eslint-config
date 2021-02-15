@@ -2,6 +2,32 @@
 
 ESLint preset for QuITS apps
 
+## \[0.3.0] - 2021-02-15
+
+### Added
+
+- `unicorn/numeric-separators-style` as warn in TypeScript overrides
+- `unicorn/prefer-array-find` as error
+- `unicorn/prefer-array-flat-map` as warn
+- `unicorn/prefer-date-now` as error
+- `unicorn/prefer-regexp-test` as warn
+- `unicorn/prefer-string-trim-start-end` as warn
+- `unicorn/prefer-ternary` as warn
+- `@typescript-eslint/no-implicit-any-catch` as warn
+
+### Changed
+
+- `unicorn/prefer-keyboard-event-key` from error to warn
+- Move `unicorn/prefer-optional-catch-binding` to TypeScript overrides
+
+### Removed
+
+- `@typescript-eslint/no-unused-vars-experimental` from ts-runtime, as it is slow.
+
+### Fixed
+
+- Exclude test files from the npm package.
+
 ## \[0.2.0] - 2021-02-14
 
 ### Added

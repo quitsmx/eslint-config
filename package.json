@@ -1,7 +1,7 @@
 {
   "name": "@quitsmx/eslint-config",
   "description": "Customized ESLint config for TypeScript + React or Preact + PrettierX",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "index.js",
   "author": "aMarCruz <amarcruzbox-git@yahoo.com>",
   "license": "MIT",
@@ -19,6 +19,11 @@
     "react",
     "preact",
     "lint"
+  ],
+  "files": [
+    "*.js",
+    "preset",
+    "extras"
   ],
   "bin": {
     "list-eslint-config": "./bin/list-eslint-config.js",
