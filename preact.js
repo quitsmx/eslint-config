@@ -3,22 +3,17 @@ const conf = require('./extras/react/.eslintrc.js')
 /**
  * Get the Preact Version.
  */
-const preactVersion = function () {
-  let preactPath = ''
-  let version = ''
-
+const getPreactVersion = function () {
   try {
-    preactPath = require.resolve('preact')
-    version = require('preact/compat/dist/compat').version
+    return require('preact/compat/dist/compat').version || '99.99.99'
   } catch (err) {
-    if (!preactPath) {
-      console.error('React is not detected.')
+    if (err.code === 'MODULE_NOT_FOUND') {
+      console.warn('Preact is not detected.')
     } else {
       console.error(err.message)
     }
   }
-
-  return version || '16.2.0'
+  return '16.2.0'
 }
 
 /**
@@ -32,7 +27,7 @@ const getConf = () => {
   settings.react = Object.assign(settings.react, {
     pragma: 'h',
     fragment: 'Fragment',
-    version: preactVersion(),
+    version: getPreactVersion(),
   })
 
   options.jsxPragma = 'h'

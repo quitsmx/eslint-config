@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "extends": ["../index.js"],
+  "overrides": [
+    {
+      "files": ["**/react*.tsx", "**/react*.jsx"],
+      "extends": ["../react"]
+    },
+    {
+      "files": ["**/preact.tsx"],
+      "extends": ["../preact"]
+    },
+    {
+      "files": ["**/fixtures/*.js"],
+      "extends": ["../node"]
+    }
+  ]
+}

@@ -1,14 +1,9 @@
 /* eslint-disable max-len, unicorn/prefer-spread */
 /* eslint prettierx/options:[2,{printWidth:120}] */
 /*
+
   Configuración para ESLint 6.x
 
-  El soporte preact se basa en react con los siguientes cambios:
-
-  - 'react/no-did-update-set-state': ON,
-  - 'react/no-unknown-property': [ON, { ignore: ['class', 'for'] }]
-
-  @date 2019-02-28T03:48:11.238Z
 */
 const globals = require('./globals')
 
@@ -86,12 +81,6 @@ const linesBetweenClassMembersOpts = {
   exceptAfterOverload: true,
 }
 
-// const sortImportsOpts = {
-//   ignoreCase: true,
-//   ignoreDeclarationSort: true,
-//   ignoreMemberSort: false,
-// }
-
 const spacedCommentsOpts = {
   block: {
     exceptions: ['*'],
@@ -110,7 +99,7 @@ const promiseCatchOrReturnOpts = {
 }
 
 const banTSCommentOpts = {
-  'ts-expect-error': 'allow-with-description',
+  'ts-expect-error': false,
   'ts-ignore': 'allow-with-description',
   'ts-nocheck': 'allow-with-description',
   'ts-check': false,
@@ -161,11 +150,11 @@ module.exports = {
 
   env: {
     browser: true,
-    es2017: true,
+    es2017: true, // there's no "es218" environment
   },
 
   parserOptions: {
-    ecmaVersion: 9,
+    ecmaVersion: 2018, // ES 9
     sourceType: 'module',
     warnOnUnsupportedTypeScriptVersion: false,
     ecmaFeatures: {
@@ -326,8 +315,6 @@ module.exports = {
     '@typescript-eslint/prefer-as-const': ON,
     '@typescript-eslint/prefer-function-type': WARN,
     '@typescript-eslint/prefer-namespace-keyword': ON,
-    '@typescript-eslint/prefer-optional-chain': WARN,
-    '@typescript-eslint/prefer-ts-expect-error': WARN,
     '@typescript-eslint/sort-type-union-intersection-members': WARN,
     '@typescript-eslint/type-annotation-spacing': ON,
     '@typescript-eslint/unified-signatures': WARN,
@@ -431,6 +418,7 @@ module.exports = {
         '@typescript-eslint/no-empty-function': WARN,
         '@typescript-eslint/no-redeclare': ON,
         '@typescript-eslint/no-require-imports': ON,
+        '@typescript-eslint/prefer-optional-chain': WARN,
       },
     },
   ],

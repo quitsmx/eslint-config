@@ -5,10 +5,9 @@
 
   El soporte preact se basa en react con los siguientes cambios:
 
-  - 'react/no-did-update-set-state': ON,
   - 'react/no-unknown-property': [ON, { ignore: ['class', 'for'] }]
 
-  @date 2019-02-28T03:48:11.238Z
+  @date 2020-02-14
 */
 const WARN = 1
 const ON = 2
@@ -64,7 +63,7 @@ module.exports = {
     'react/no-this-in-sfc': ON,
     'react/no-typos': ON,
     'react/no-unescaped-entities': ON,
-    'react/no-unknown-property': ON, // preact
+    'react/no-unknown-property': ON,
     'react/no-will-update-set-state': ON,
     'react/prefer-stateless-function': WARN,
     'react/require-render-return': ON,

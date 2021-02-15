@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "baseUrl": ".",
+    "charset": "utf8",
+    "emitDecoratorMetadata": false,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": false,
+    "incremental": true,
+    "inlineSources": false,
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": false,
+    "sourceMap": true,
+    "strict": true,
+    "stripInternal": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "ES2019"
+  },
+  "include": ["fixtures"]
+}

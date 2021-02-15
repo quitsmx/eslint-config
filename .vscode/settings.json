@@ -8,19 +8,32 @@
   "git.enableSmartCommit": true,
   "npm.packageManager": "yarn",
   "javascript.format.enable": false,
+  "typescript.format.enable": false,
   "editor.formatOnSave": false,
   "eslint.format.enable": true,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",

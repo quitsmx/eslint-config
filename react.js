@@ -5,8 +5,7 @@ const conf = require('./extras/react/.eslintrc.js')
  */
 const getReactVersion = () => {
   try {
-    const version = require('react').version || '999.999.999'
-    return version
+    return require('react').version || '99.99.99'
   } catch (err) {
     if (err.code === 'MODULE_NOT_FOUND') {
       console.warn('React is not detected.')

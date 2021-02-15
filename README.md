@@ -21,21 +21,23 @@ Preset for ESLint, to be used in TypeScript apps with [React](https://reactjs.or
 
 ### NodeJS Executables
 
-Run with `yarn` or `npm run`
+In node_modules/.bin, to be runned with `yarn` or `npm run`:
 
-- quits-eslint-init
+- `quits-eslint-init`
 
   Create .eslintrc.json and .prettierrc.json in the current directory, if they don't exist.
 
-- list-eslint-config
+- `list-eslint-config`
 
   List the effective ESLint configuration applied to a file.
 
 ## Install & Basic Usage
 
-Install eslint and the config from npm:
+Install eslint and this eslint-config from npm:
 
 ```bash
+npm i -D eslint @quitsmx/eslint-config
+# or
 yarn add -D eslint @quitsmx/eslint-config
 ```
 
@@ -77,14 +79,12 @@ yarn add -D amarcruz/prettierx
 
 ## Use with React or Preact
 
-Add the desired config, `react` or `preact`, prefixed with `@quitsmx/eslint-config/`
-
-This will load preact config:
+Add the desired config, `react` or `preact`, prefixed with `@quitsmx/eslint-config/` like this:
 
 ```json
 {
   "root": true,
-  "extends": ["@quitsmx", "@quitsmx/eslint-config/preact]
+  "extends": ["@quitsmx", "@quitsmx/eslint-config/preact"]
 }
 ```
 
@@ -123,7 +123,7 @@ Install the VS Code ESLint extension, then add this to your settings.json to ena
 
 ## License
 
-The [MIT](LICENSE) License &copy; 2021 QuITS
+The [MIT](LICENSE) License &copy; 2021 by QuITS
 
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: https://github.com/quitsmx/eslint-config/blob/master/LICENSE

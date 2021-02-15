@@ -1,18 +1,7 @@
 {
   "root": true,
 
-  "plugins": [
-    "@typescript-eslint",
-    "compat",
-    "jsx-a11y",
-    "prettierx",
-    "promise",
-    "react-hooks",
-    "react-perf",
-    "react",
-    "simple-import-sort",
-    "unicorn"
-  ],
+  "plugins": ["@typescript-eslint", "compat", "jsx-a11y", "prettierx", "promise", "simple-import-sort", "unicorn"],
 
   "env": {
     "node": true,
