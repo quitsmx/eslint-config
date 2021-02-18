@@ -1,7 +1,7 @@
 {
   "name": "@quitsmx/eslint-config",
   "description": "Customized ESLint config for TypeScript + React or Preact + PrettierX",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "index.js",
   "author": "aMarCruz <amarcruzbox-git@yahoo.com>",
   "license": "MIT",
@@ -20,15 +20,16 @@
     "preact",
     "lint"
   ],
+  "bin": {
+    "list-eslint-config": "bin/list-eslint-config.js",
+    "quits-eslint-init": "bin/quits-eslint-init.js"
+  },
   "files": [
     "*.js",
+    "bin/*.js",
     "preset",
     "extras"
   ],
-  "bin": {
-    "list-eslint-config": "./bin/list-eslint-config.js",
-    "quits-eslint-init": "./bin/quits-eslint-init.js"
-  },
   "engines": {
     "node": ">=12.0.0",
     "yarn": ">=1.22.5"
@@ -40,8 +41,8 @@
     "test": "eslint test && node test/deprecated"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "~4.15.0",
-    "@typescript-eslint/parser": "~4.15.0",
+    "@typescript-eslint/eslint-plugin": "~4.15.1",
+    "@typescript-eslint/parser": "~4.15.1",
     "confusing-browser-globals": "*",
     "eslint-plugin-compat": "~3.9.0",
     "eslint-plugin-jsx-a11y": "~6.4.1",
@@ -52,15 +53,15 @@
     "eslint-plugin-react-hooks": "~4.2.0",
     "eslint-plugin-react-perf": "~3.3.0",
     "eslint-plugin-simple-import-sort": "~7.0.0",
-    "eslint-plugin-unicorn": "~28.0.0"
+    "eslint-plugin-unicorn": "~28.0.2"
   },
   "peerDependencies": {
     "eslint": ">=7.18",
-    "typescript": ">=4.0 <4.3.0"
+    "typescript": "~4.0.0 || ~4.1.0"
   },
   "devDependencies": {
     "@types/eslint": "~7.2.6",
-    "@types/node": "~14.14.28",
+    "@types/node": "~14.14.29",
     "@types/react": "~17.0.2",
     "eslint": "~7.20.0",
     "preact": "~10.5.12",

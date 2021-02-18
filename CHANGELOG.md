@@ -2,6 +2,14 @@
 
 ESLint preset for QuITS apps
 
+## \[0.3.1] - 2021-02-18
+
+### Changed
+
+- Minor fixes to the Readme
+- Now `quits-eslint-init` creates a '.vscode/settings.json' file with basic VS Code settings to apply '@quitsmx/eslint-config' to JavaScript files, with automatic format on save.
+- Update dependencies.
+
 ## \[0.3.0] - 2021-02-15
 
 ### Added

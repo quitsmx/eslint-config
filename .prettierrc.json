@@ -1,10 +1,12 @@
 {
-  "offsetTernaryExpressions": true,
   "arrowParens": "avoid",
   "generatorStarSpacing": true,
+  "indentChains": true,
+  "offsetTernaryExpressions": true,
   "printWidth": 120,
   "quoteProps": "consistent",
   "semi": false,
   "singleQuote": true,
+  "spaceBeforeFunctionParen": true,
   "yieldStarSpacing": true
 }

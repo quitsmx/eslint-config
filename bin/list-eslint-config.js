@@ -4,7 +4,7 @@
 const path = require('path')
 const eslint = require('eslint')
 
-const DEFAULT_EXTENSIONS = ['.js', '.jsx', '.mjs', '.ts', '.tsx']
+const DEFAULT_EXTENSIONS = ['.js', '.jsx', '.cjs', '.esm', '.mjs', '.ts', '.tsx']
 
 /** @typedef {import('eslint').Linter.BaseConfig} Config */
 

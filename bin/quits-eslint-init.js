@@ -10,24 +10,24 @@ const fs = require('fs')
  * @param {object} conf
  */
 const createJsonFile = (name, conf) => {
-  const file = path.resolve('.', name)
+  const file = path.resolve(name)
 
   if (fs.existsSync(file)) {
     console.log(`${name} already exists, skipped.`)
-  } else {
-    fs.writeFile(file, JSON.stringify(conf, null, 2), 'utf8', err => {
-      if (err) {
-        console.error(`Can't create ${name}: ${err.message || err}`)
-      }
-    })
+    return
+  }
+
+  try {
+    fs.writeFileSync(file, JSON.stringify(conf, null, 2), 'utf8')
+  } catch (err) {
+    console.error(`Can't create ${name}: ${err.message || err}`)
+    process.exitCode = 1
   }
 }
 
 createJsonFile('.eslintrc.json', {
   root: true,
-  ignorePatterns: ['/.vscode', '/dist'],
   extends: ['@quitsmx', '@quitsmx/eslint-config/react'],
-  rules: {},
 })
 
 createJsonFile('.prettierrc.json', {
@@ -42,3 +42,42 @@ createJsonFile('.prettierrc.json', {
   spaceBeforeFunctionParen: true,
   yieldStarSpacing: true,
 })
+
+// VS Code settings ------------------------------------------------------------
+
+const vsCodeConf = {
+  'javascript.format.enable': false,
+  'typescript.format.enable': false,
+  'eslint.format.enable': true,
+  '[javascript]': {
+    'editor.defaultFormatter': 'dbaeumer.vscode-eslint',
+    'editor.formatOnSave': true,
+  },
+  '[javascriptreact]': {
+    'editor.defaultFormatter': 'dbaeumer.vscode-eslint',
+    'editor.formatOnSave': true,
+  },
+  '[typescript]': {
+    'editor.defaultFormatter': 'dbaeumer.vscode-eslint',
+    'editor.formatOnSave': true,
+  },
+  '[typescriptreact]': {
+    'editor.defaultFormatter': 'dbaeumer.vscode-eslint',
+    'editor.formatOnSave': true,
+  },
+}
+
+const vscDir = path.resolve('.vscode')
+let ok = false
+
+try {
+  !fs.existsSync(vscDir) && fs.mkdirSync(vscDir)
+  ok = true
+} catch (err) {
+  console.error(`\nCannot create the '.vscode' folder: ${err.message || err}\n`)
+  process.exitCode = 1
+}
+
+if (ok) {
+  createJsonFile('.vscode/settings.json', vsCodeConf)
+}

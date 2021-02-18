@@ -3,7 +3,7 @@
 [![License][license-badge]][license-url]
 [![npm Version][npm-badge]][npm-url]
 
-Preset for ESLint, to be used in TypeScript apps with [React](https://reactjs.org/) or [Preact](https://github.com/preactjs/preact) and [PrettierX](https://www.npmjs.com/package/prettierx), almost compatible with [StandardJS](https://standardjs.com/).
+Preset for ESLint, to be used in TypeScript projects with [React](https://reactjs.org/) or [Preact](https://github.com/preactjs/preact) and [PrettierX](https://www.npmjs.com/package/prettierx), almost compatible with [StandardJS](https://standardjs.com/).
 
 ## Included plugins
 
@@ -21,11 +21,11 @@ Preset for ESLint, to be used in TypeScript apps with [React](https://reactjs.or
 
 ### NodeJS Executables
 
-In node_modules/.bin, to be runned with `yarn` or `npm run`:
+Installed in node_modules/.bin, to be runned with `yarn` or `npm run`:
 
 - `quits-eslint-init`
 
-  Create .eslintrc.json and .prettierrc.json in the current directory, if they don't exist.
+  Create .eslintrc.json, .prettierrc.json and .vscode/settings.json files in the current directory, if they don't exist.
 
 - `list-eslint-config`
 
@@ -33,7 +33,7 @@ In node_modules/.bin, to be runned with `yarn` or `npm run`:
 
 ## Install & Basic Usage
 
-Install eslint and this eslint-config from npm:
+Install eslint and this config from npm:
 
 ```bash
 npm i -D eslint @quitsmx/eslint-config
@@ -41,7 +41,7 @@ npm i -D eslint @quitsmx/eslint-config
 yarn add -D eslint @quitsmx/eslint-config
 ```
 
-Include in your eslint config (.eslintrc.json, .eslintrc.js, etc):
+Create the ESLint config file in the root of your project (.eslintrc.json, .eslintrc.js, etc):
 
 ```json
 {
@@ -50,11 +50,11 @@ Include in your eslint config (.eslintrc.json, .eslintrc.js, etc):
 }
 ```
 
-You can override any you want (rules, env, etc).
+You can overwrite whatever you want (`rules`, `env`, etc), only "extends" is required.
 
-### Prettier
+### PrettierX
 
-Make a `.prettierrc.json` in the root if your project, for example:
+Configure PrettierX with a `.prettierrc.json` file in the root of your project, for example:
 
 ```json
 {
@@ -71,13 +71,13 @@ Make a `.prettierrc.json` in the root if your project, for example:
 }
 ```
 
-To avoid conflicts between Prettier and PrettierX, it is recommended that you install the fake Prettier package from [aMarCruz/prettier](https://github.com/aMarcruz/prettier).
+To avoid conflicts between Prettier and PrettierX, it is recommended that you install the (fake) Prettier package from [aMarCruz/prettier](https://github.com/aMarcruz/prettier).
 
 ```bash
-yarn add -D amarcruz/prettierx
+yarn add -D aMarCruz/prettierx
 ```
 
-## Use with React or Preact
+### Use with React or Preact
 
 Add the desired config, `react` or `preact`, prefixed with `@quitsmx/eslint-config/` like this:
 
@@ -88,7 +88,7 @@ Add the desired config, `react` or `preact`, prefixed with `@quitsmx/eslint-conf
 }
 ```
 
-## Other configs
+### Other configs
 
 - TypeScript with a project (runtime info): `@quitsmx/eslint-config/ts-runtime`
 - For nodeJS: `@quitsmx/eslint-config/node`
