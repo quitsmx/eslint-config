@@ -11,7 +11,7 @@ type Props = { foo: typeof Foo; bar: readonly string[][] }
 type Dict = { [k: string]: React.Ref<any> }
 
 class Test1 extends React.Component<Props> {
-  render() {
+  render () {
     // no-unused-vars must be off. Comment next line to show the TS warning
     /* eslint-disable @typescript-eslint/no-require-imports */
     // @ts-expect-error

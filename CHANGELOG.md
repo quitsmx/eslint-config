@@ -7,6 +7,7 @@ ESLint preset for QuITS apps
 ### Changed
 
 - Minor fixes to the Readme
+- Add missing `"spaceBeforeFunctionParen": true` to .prettierrc.json
 - Now `quits-eslint-init` creates a '.vscode/settings.json' file with basic VS Code settings to apply '@quitsmx/eslint-config' to JavaScript files, with automatic format on save.
 - Update dependencies.
 

@@ -54,7 +54,8 @@ You can overwrite whatever you want (`rules`, `env`, etc), only "extends" is req
 
 ### PrettierX
 
-Configure PrettierX with a `.prettierrc.json` file in the root of your project, for example:
+Configure PrettierX with a `.prettierrc.json` file in the root of your project.
+For example, this config used by QuITS.mx, is almost the same as StandardJS:
 
 ```json
 {

@@ -13,7 +13,7 @@ const anonymous = function * () {
 }
 
 const shorthand = {
-  * generator() {
+  * generator () {
     /* */
   },
 }
