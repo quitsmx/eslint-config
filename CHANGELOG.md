@@ -2,6 +2,25 @@
 
 ESLint preset for QuITS apps
 
+## \[0.4.0] - 2021-02-19
+
+### Added
+
+- `publishConfig.access: 'public'` in package.json
+
+### Changed
+
+- Use `@typescript-eslint/no-shadow` instead `no-shadow` in TypeScript files.
+
+The following `@typescript-eslint` runtime rules are disabled:
+
+- `no-unnecessary-condition`
+- `prefer-readonly-parameter-types`
+- `prefer-readonly`
+- `prefer-string-starts-ends-with`
+- `strict-boolean-expressions`
+- `unbound-method`
+
 ## \[0.3.1] - 2021-02-18
 
 ### Changed
