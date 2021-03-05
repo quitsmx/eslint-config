@@ -8,5 +8,13 @@
   "semi": false,
   "singleQuote": true,
   "spaceBeforeFunctionParen": true,
-  "yieldStarSpacing": true
+  "yieldStarSpacing": true,
+  "overrides": [
+    {
+      "files": [".eslintrc.json"],
+      "options": {
+        "printWidth": 80
+      }
+    }
+  ]
 }

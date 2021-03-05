@@ -1,7 +1,7 @@
 {
   "name": "@quitsmx/eslint-config",
   "description": "Customized ESLint config for TypeScript + React or Preact + PrettierX",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "index.js",
   "author": "aMarCruz <amarcruzbox-git@yahoo.com>",
   "license": "MIT",
@@ -44,8 +44,8 @@
     "test": "eslint test && node test/deprecated"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "~4.15.1",
-    "@typescript-eslint/parser": "~4.15.1",
+    "@typescript-eslint/eslint-plugin": "~4.16.1",
+    "@typescript-eslint/parser": "~4.16.1",
     "confusing-browser-globals": "*",
     "eslint-plugin-compat": "~3.9.0",
     "eslint-plugin-jsx-a11y": "~6.4.1",
@@ -64,10 +64,11 @@
   },
   "devDependencies": {
     "@types/eslint": "~7.2.6",
-    "@types/node": "~14.14.30",
+    "@types/node": "~14.14.31",
     "@types/react": "~17.0.2",
-    "eslint": "~7.20.0",
+    "eslint": "~7.21.0",
     "preact": "~10.5.12",
-    "typescript": "~4.1.5"
+    "react": "~17.0.1",
+    "typescript": "~4.2.3"
   }
 }

@@ -2,6 +2,21 @@
 
 ESLint preset for QuITS apps
 
+## \[0.4.1] - 2021-03-05
+
+### Added
+
+- `curly` as warn, only for multi-line (PrettierX doesn't force braces).
+- react package to `devDependencies` to allow test the "react" config.
+
+### Changed
+
+- Update dependencies.
+
+### Fixed
+
+- `@typescript-eslint/no-for-in-array` must be in 'ts-runtime' only.
+
 ## \[0.4.0] - 2021-02-19
 
 ### Added

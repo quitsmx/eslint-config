@@ -1,11 +1,19 @@
 {
   "root": true,
 
-  "plugins": ["@typescript-eslint", "compat", "jsx-a11y", "prettierx", "promise", "simple-import-sort", "unicorn"],
+  "plugins": [
+    "@typescript-eslint",
+    "compat",
+    "jsx-a11y",
+    "prettierx",
+    "promise",
+    "simple-import-sort",
+    "unicorn"
+  ],
 
   "env": {
     "node": true,
-    "es2017": true
+    "es2018": true
   },
 
   "parserOptions": {
