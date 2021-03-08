@@ -435,7 +435,6 @@ module.exports = {
         '@typescript-eslint/no-redeclare': ON,
         '@typescript-eslint/no-require-imports': ON,
         '@typescript-eslint/no-shadow': WARN,
-        '@typescript-eslint/prefer-optional-chain': WARN,
         'unicorn/numeric-separators-style': [WARN, numericSeparatorsStyleOpts],
         'unicorn/prefer-optional-catch-binding': ON,
       },

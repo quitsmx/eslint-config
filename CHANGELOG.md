@@ -2,6 +2,17 @@
 
 ESLint preset for QuITS apps
 
+## \[0.4.2] - 2021-03-08
+
+### Changed
+
+- Update dependencies.
+- Accept changes of minor version in `peerDependencies`
+
+### Removed
+
+- `@typescript-eslint/prefer-optional-chain` as optional-chain is expansive in es2018 and lower.
+
 ## \[0.4.1] - 2021-03-05
 
 ### Added
