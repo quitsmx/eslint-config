@@ -2,7 +2,7 @@
 
 ESLint preset for QuITS apps
 
-## \[unreleased]
+## \[0.5.0] - 2021-04-27
 
 ### Changed
 
@@ -11,6 +11,8 @@ In build time, the configuration of this package are based on the eslint-config-
 Several rules have been changed to fit the new base and others have been added.
 
 Include workaround for typescript-eslint/typescript-eslint#2540
+
+Updated bin/quits-eslint-init
 
 ### Removed
 
