@@ -1,1 +1,1 @@
-module.exports = require('./extras/node/.eslintrc.js')
+module.exports = require('./dist/eslintrc-node.json')

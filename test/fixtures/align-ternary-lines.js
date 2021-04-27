@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
-/* eslint indent:[2,2,{flatTernaryExpressions:false}] */
-/* eslint-env es6 */
 const abababababab = ['', '', '', '']
 
-const abcvar1 =
+const _abcvar1 =
   abababababab[0] === 'foobarfoobarfoobarfoobar1'
     ? abababababab[0]
     : abababababab[1] === 'foobarfoobarfoobarfoobar1'

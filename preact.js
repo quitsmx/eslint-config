@@ -1,11 +1,12 @@
-const conf = require('./extras/react/.eslintrc.js')
+const preactConf = require('./dist/eslintrc-preact.json')
 
 /**
  * Get the Preact Version.
  */
 const getPreactVersion = function () {
   try {
-    return require('preact/compat/dist/compat').version || '99.99.99'
+    // eslint-disable-next-line node/no-unpublished-require, node/global-require
+    return require('preact/compat/dist/compat').version
   } catch (err) {
     if (err.code === 'MODULE_NOT_FOUND') {
       console.warn('Preact is not detected.')
@@ -13,28 +14,22 @@ const getPreactVersion = function () {
       console.error(err.message)
     }
   }
-  return '16.2.0'
+  return undefined
 }
 
 /**
  * Set the React version
  */
 const getConf = () => {
-  const reactConf = Object.assign({}, conf)
-  const settings = reactConf.settings
-  const options = reactConf.parserOptions
+  const version = getPreactVersion()
 
-  settings.react = Object.assign(settings.react, {
-    pragma: 'h',
-    fragment: 'Fragment',
-    version: getPreactVersion(),
-  })
+  if (version) {
+    const settings = { ...preactConf.settings }
+    settings.react = { ...settings.react, version }
+    return { ...preactConf, settings }
+  }
 
-  options.jsxPragma = 'h'
-  options.jsxFragmentName = 'Fragment'
-
-  reactConf.rules['react/no-unknown-property'] = [2, { ignore: ['class', 'for'] }]
-  return reactConf
+  return preactConf
 }
 
 module.exports = getConf()

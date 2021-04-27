@@ -2,6 +2,23 @@
 
 ESLint preset for QuITS apps
 
+## \[unreleased]
+
+### Changed
+
+In build time, the configuration of this package are based on the eslint-config-prettier, eslint-config-standard and eslint-config-standard-jsx packages, which are not required in runtime.
+
+Several rules have been changed to fit the new base and others have been added.
+
+Include workaround for typescript-eslint/typescript-eslint#2540
+
+### Removed
+
+- unicorn/no-zero-fractions - sometimes a trailing zero improves clarity
+- bin/list-eslint-config - use `yarn eslint --print-config`
+- eslint-plugin-jsx-a11y - It is easy to install from npm
+- eslint-plugin-react-perf - `react/jsx-no-bind` is enough
+
 ## \[0.4.2] - 2021-03-08
 
 ### Changed
@@ -17,7 +34,7 @@ ESLint preset for QuITS apps
 
 ### Added
 
-- `curly` as warn, only for multi-line (PrettierX doesn't force braces).
+- `curly` as warn, only for multi-line (Prettierx doesn't force braces).
 - react package to `devDependencies` to allow test the "react" config.
 
 ### Changed

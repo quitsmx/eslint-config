@@ -1,4 +1,4 @@
 /*
   Rules that requires runtime info from the TS compiler
 */
-module.exports = require('./extras/ts-runtime/.eslintrc.js')
+module.exports = require('./dist/eslintrc-tsrt.json')

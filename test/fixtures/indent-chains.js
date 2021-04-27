@@ -1,12 +1,9 @@
-/* eslint-disable no-unused-vars, comma-spacing,
-   node/no-unsupported-features/es-syntax */
-/* eslint-env es6 */
+/* eslint-disable no-unused-vars */
 const abababababab = ['', '', '', '']
 
-const abcvar = abababababab
+const _abcvar = abababababab
   .filter(item => item === 'foobarfoobarfoobarfoobar1')
   .map(item => item + 'foobarfoobarfoobarfoobar1')
   .forEach((item, ix) => {
-    item += `foobarfoobarfoobarfoobar${ix}`
+    return item + `foobarfoobarfoobarfoobar${ix}`
   })
-  .sort()

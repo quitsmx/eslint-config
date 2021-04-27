@@ -2,8 +2,7 @@
   The base config in ../.eslint.json defines an "overrides" for "*.tsx" files,
   with only one rule "semi" and the config in ../../typescript defines other
   "overrides" block containing "no-unused-vars:off".
-  The linting of this file will succeed if both blocks are merged, but must
-  exist a warnig from TS, hidden by the @ts-ignore
+  The linting of this file will succeed only if both blocks are merged.
 */
 import React from 'react'
 
@@ -13,9 +12,7 @@ type Dict = { [k: string]: React.Ref<any> }
 class Test1 extends React.Component<Props> {
   render () {
     // no-unused-vars must be off. Comment next line to show the TS warning
-    /* eslint-disable @typescript-eslint/no-require-imports */
-    // @ts-expect-error
-    const React2 = require('react').createRef()
+    const _React2 = React.createRef()
     const foo: Dict = {}
     foo.bar = React.createRef()
 

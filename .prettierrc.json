@@ -1,20 +1,14 @@
 {
   "arrowParens": "avoid",
+  "endOfLine": "lf",
   "generatorStarSpacing": true,
-  "indentChains": true,
   "offsetTernaryExpressions": true,
-  "printWidth": 120,
+  "printWidth": 92,
   "quoteProps": "consistent",
   "semi": false,
   "singleQuote": true,
   "spaceBeforeFunctionParen": true,
-  "yieldStarSpacing": true,
-  "overrides": [
-    {
-      "files": [".eslintrc.json"],
-      "options": {
-        "printWidth": 80
-      }
-    }
-  ]
+  "tabWidth": 2,
+  "useTabs": false,
+  "yieldStarSpacing": true
 }

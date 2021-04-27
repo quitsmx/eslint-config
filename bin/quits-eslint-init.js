@@ -1,49 +1,28 @@
 #!/usr/bin/env node
 // @ts-check
 
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
+const presets = require('eslint-plugin-prettierx/lib/configs/presets')
 
-/**
- * Create a JSON file if not exists.
- * @param {string} name
- * @param {object} conf
- */
-const createJsonFile = (name, conf) => {
-  const file = path.resolve(name)
+// eslint-disable-next-line node/no-extraneous-require
+const prettier = require('prettierx')
 
-  if (fs.existsSync(file)) {
-    console.log(`${name} already exists, skipped.`)
-    return
-  }
-
-  try {
-    fs.writeFileSync(file, JSON.stringify(conf, null, 2), 'utf8')
-  } catch (err) {
-    console.error(`Can't create ${name}: ${err.message || err}`)
-    process.exitCode = 1
-  }
-}
-
-createJsonFile('.eslintrc.json', {
+const eslintConf = {
   root: true,
   extends: ['@quitsmx', '@quitsmx/eslint-config/react'],
-})
+  overrides: [
+    {
+      files: ['/bin', '/scripts'],
+      parserOptions: { sourceType: 'script' },
+      extends: ['@quitsmx/eslint-config/node'],
+    },
+  ],
+}
 
-createJsonFile('.prettierrc.json', {
-  offsetTernaryExpressions: true,
-  arrowParens: 'avoid',
-  generatorStarSpacing: true,
-  indentChains: true,
-  printWidth: 92,
-  quoteProps: 'consistent',
-  semi: false,
-  singleQuote: true,
-  spaceBeforeFunctionParen: true,
-  yieldStarSpacing: true,
-})
-
-// VS Code settings ------------------------------------------------------------
+const prettierConf = {
+  ...presets.standardize,
+}
 
 const vsCodeConf = {
   'javascript.format.enable': false,
@@ -67,17 +46,51 @@ const vsCodeConf = {
   },
 }
 
-const vscDir = path.resolve('.vscode')
-let ok = false
+/**
+ * Create a JSON file if not exists.
+ * @param {string} name
+ * @param {object} conf
+ */
+const createJsonFile = (name, conf) => {
+  const file = path.resolve(name)
 
-try {
-  !fs.existsSync(vscDir) && fs.mkdirSync(vscDir)
-  ok = true
-} catch (err) {
-  console.error(`\nCannot create the '.vscode' folder: ${err.message || err}\n`)
-  process.exitCode = 1
+  if (fs.existsSync(file)) {
+    const bakFile = file + '.bak'
+
+    if (fs.existsSync(bakFile)) {
+      console.log(`${name} and its .bak already exists, skipped.`)
+      return
+    }
+
+    fs.renameSync(file, bakFile)
+  }
+
+  const data = prettier.format(JSON.stringify(conf), {
+    ...prettierConf,
+    filepath: file,
+  })
+
+  try {
+    fs.writeFileSync(file, data, 'utf8')
+  } catch (err) {
+    console.error(`Can't create ${name}: ${err.message || err}`)
+    process.exitCode = 1
+  }
 }
 
-if (ok) {
+const checkVSCodeDir = () => {
+  const vscDir = path.resolve('.vscode')
+
+  if (!fs.existsSync(vscDir)) {
+    fs.mkdirSync(vscDir)
+  }
+}
+
+const makeConf = () => {
+  checkVSCodeDir()
+  createJsonFile('.eslintrc.json', eslintConf)
+  createJsonFile('.prettierrc.json', prettierConf)
   createJsonFile('.vscode/settings.json', vsCodeConf)
 }
+
+makeConf()

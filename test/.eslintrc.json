@@ -3,16 +3,19 @@
   "extends": ["../index.js"],
   "overrides": [
     {
-      "files": ["**/react*.tsx", "**/react*.jsx"],
-      "extends": ["../react"]
+      "files": ["**/react*.*"],
+      "extends": ["../react.js"]
     },
     {
-      "files": ["**/preact.tsx"],
-      "extends": ["../preact"]
+      "files": ["**/preact.*"],
+      "extends": ["../preact.js"],
+      "rules": {
+        "prettierx/options": [2, { "semi": true }]
+      }
     },
     {
       "files": ["**/fixtures/*.js"],
-      "extends": ["../node"]
+      "extends": ["../node.js"]
     }
   ]
 }

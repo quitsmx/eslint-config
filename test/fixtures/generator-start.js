@@ -1,8 +1,4 @@
-/* eslint-disable no-unused-vars, comma-spacing,
-   node/no-unsupported-features/es-syntax */
-/* eslint-env es6 */
-
-/* eslint generator-star-spacing: ["error", {"before": true, "after": true}] */
+/* eslint-disable no-unused-vars, @typescript-eslint/naming-convention */
 
 function * generator () {
   yield * 1

@@ -1,30 +1,5 @@
 {
   "root": true,
-
-  "plugins": [
-    "@typescript-eslint",
-    "compat",
-    "jsx-a11y",
-    "prettierx",
-    "promise",
-    "simple-import-sort",
-    "unicorn"
-  ],
-
-  "env": {
-    "node": true,
-    "es2018": true
-  },
-
-  "parserOptions": {
-    "ecmaFeatures": { "impliedStrict": true },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-
-  "extends": ["eslint:recommended"],
-
-  "rules": {
-    "prettierx/options": 1
-  }
+  "parserOptions": { "sourceType": "script" },
+  "extends": ["./index.js", "./node.js", "./react.js"]
 }

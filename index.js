@@ -8,4 +8,4 @@
 
   @date 2019-02-28T03:48:11.238Z
 */
-module.exports = require('./preset/.eslintrc')
+module.exports = require('./dist/eslintrc.json')

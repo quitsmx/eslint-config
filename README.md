@@ -3,100 +3,110 @@
 [![License][license-badge]][license-url]
 [![npm Version][npm-badge]][npm-url]
 
-Preset for ESLint, to be used in TypeScript projects with [React](https://reactjs.org/) or [Preact](https://github.com/preactjs/preact) and [PrettierX](https://www.npmjs.com/package/prettierx), almost compatible with [StandardJS](https://standardjs.com/).
+[ESLint](https://eslint.org/) configuration with embeded support for [TypeScript](https://www.typescriptlang.org/) and [Prettierx](https://www.npmjs.com/package/prettierx) to be used in modern browsers, almost compatible with [StandardJS](https://standardjs.com/).
 
-## Included plugins
+Includes extra configurations for [React](https://reactjs.org/), [Preact](https://preactjs.com/) and [Node.js](https://nodejs.org/en/).
+
+**Requirements:**
+
+- ESLint 7
+- TypeScript 4
+- NodeJS 10.13 or 12 and later
+
+## Included Plugins
 
 - [@typescript-eslint](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
 - [compat](https://www.npmjs.com/package/eslint-plugin-compat)
-- [jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 - [node](https://www.npmjs.com/package/eslint-plugin-node)
 - [prettierx](https://www.npmjs.com/package/eslint-plugin-prettierx)
 - [promise](https://www.npmjs.com/package/eslint-plugin-promise)
 - [react](https://www.npmjs.com/package/eslint-plugin-react)
 - [react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
-- [react-perf](https://www.npmjs.com/package/eslint-plugin-react-perf)
 - [eslint-plugin-simple-import-sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)
 - [unicorn](https://www.npmjs.com/package/unicorn)
 
-### NodeJS Executables
-
-Installed in node_modules/.bin, to be runned with `yarn` or `npm run`:
-
-- `quits-eslint-init`
-
-  Create .eslintrc.json, .prettierrc.json and .vscode/settings.json files in the current directory, if they don't exist.
-
-- `list-eslint-config`
-
-  List the effective ESLint configuration applied to a file.
-
-## Install & Basic Usage
+## Install
 
 Install eslint and this config from npm:
 
 ```bash
-npm i -D eslint @quitsmx/eslint-config
-# or
-yarn add -D eslint @quitsmx/eslint-config
+yarn add -D eslint typescript amarcruz/prettier @quitsmx/eslint-config
 ```
 
-Create the ESLint config file in the root of your project (.eslintrc.json, .eslintrc.js, etc):
+[aMarCruz/prettier](https://github.com/aMarCruz/prettier) is recommended to avoid conflicts with other Prettier tools.
+
+### Setup
+
+Run with `npx` or `yarn` from the root of your project:
+
+```bash
+npx quits-eslint-init
+```
+
+Review and customize the generated .eslintrc.json, .prettierrc.json and .vscode/settings.json files.
+
+The only required setting is `extends` in the .eslintrc file:
 
 ```json
 {
-  "root": true,
   "extends": ["@quitsmx"]
 }
 ```
 
-You can overwrite whatever you want (`rules`, `env`, etc), only "extends" is required.
+### Extra Configurations
 
-### PrettierX
+Add to `extends[]` the configs for your environment:
 
-Configure PrettierX with a `.prettierrc.json` file in the root of your project.
+| Package            | Configuration                       |
+| ------------------ | ----------------------------------- |
+| node               | `@quitsmx/eslint-config/node`       |
+| react              | `@quitsmx/eslint-config/react`      |
+| preact             | `@quitsmx/eslint-config/preact`     |
+| TypeScript runtime | `@quitsmx/eslint-config/ts-runtime` |
+
+For the TypeScript runtime you need to set the proyect in your ESLint config.
+For example:
+
+```json
+{
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["@quitsmx", "@quitsmx/eslint-config/ts-runtime"]
+}
+```
+
+### Prettierx
+
+Configure Prettierx with a `.prettierrc.json` file in the root of your project.
 For example, this config used by QuITS.mx, is almost the same as StandardJS:
 
 ```json
 {
-  "offsetTernaryExpressions": true,
   "arrowParens": "avoid",
+  "endOfLine": "lf",
   "generatorStarSpacing": true,
-  "indentChains": true,
+  "offsetTernaryExpressions": true,
   "printWidth": 92,
   "quoteProps": "consistent",
   "semi": false,
   "singleQuote": true,
   "spaceBeforeFunctionParen": true,
+  "tabWidth": 2,
+  "useTabs": false,
   "yieldStarSpacing": true
 }
 ```
 
-To avoid conflicts between Prettier and PrettierX, it is recommended that you install the (fake) Prettier package from [aMarCruz/prettier](https://github.com/aMarcruz/prettier).
+To avoid conflicts between Prettier and Prettierx, it is recommended that you install the (fake) Prettier package from [aMarCruz/prettier](https://github.com/aMarcruz/prettier).
 
 ```bash
 yarn add -D aMarCruz/prettierx
 ```
 
-### Use with React or Preact
-
-Add the desired config, `react` or `preact`, prefixed with `@quitsmx/eslint-config/` like this:
-
-```json
-{
-  "root": true,
-  "extends": ["@quitsmx", "@quitsmx/eslint-config/preact"]
-}
-```
-
-### Other configs
-
-- TypeScript with a project (runtime info): `@quitsmx/eslint-config/ts-runtime`
-- For nodeJS: `@quitsmx/eslint-config/node`
-
 ## Using with VS Code
 
-Install the VS Code ESLint extension, then add this to your settings.json to enable lint and automatic format.
+Install the [ESLint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), then add this to the VS Code settings to enable lint and automatic formating on save:
 
 ```json
 {
