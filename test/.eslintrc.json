@@ -1,6 +1,9 @@
 {
   "root": true,
   "extends": ["../index.js"],
+  "rules": {
+    "no-unused-vars": "off"
+  },
   "overrides": [
     {
       "files": ["**/react*.*"],

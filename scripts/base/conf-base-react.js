@@ -16,12 +16,15 @@ module.exports = {
   plugins: ['react', 'react-hooks'],
 
   settings: {
-    ecmaVersion,
-    ecmaFeatures: { jsx: true },
     linkComponents: [{ name: 'Link', linkAttribute: 'to' }],
     react: {
       version: 'detect',
     },
+  },
+
+  parserOptions: {
+    ecmaVersion,
+    ecmaFeatures: { jsx: true },
   },
 
   env: {

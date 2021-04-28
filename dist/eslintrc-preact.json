@@ -1,10 +1,14 @@
 {
   "plugins": ["react", "react-hooks"],
   "settings": {
-    "ecmaVersion": 2020,
-    "ecmaFeatures": { "jsx": true },
     "linkComponents": [{ "name": "Link", "linkAttribute": "to" }],
     "react": { "pragma": "h", "fragment": "Fragment", "version": "16.8" }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": { "jsx": true },
+    "jsxPragma": "h",
+    "jsxFragmentName": "Fragment"
   },
   "env": { "es2020": true, "browser": true },
   "rules": {
@@ -77,6 +81,5 @@
     "react/jsx-props-no-multi-spaces": "off",
     "react/jsx-tag-spacing": "off",
     "react/jsx-wrap-multilines": "off"
-  },
-  "parserOptions": { "jsxPragma": "h", "jsxFragmentName": "Fragment" }
+  }
 }

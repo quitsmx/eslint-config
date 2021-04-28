@@ -2,6 +2,22 @@
 
 ESLint preset for QuITS apps
 
+## \[0.5.1] - unreleased
+
+### Added
+
+- .editorconfig file.
+
+### Changed
+
+- Remove `warnOnUnsupportedTypeScriptVersion` to allow TypeScript version check.
+- Include "PascalCase" format for functions and methods in `@typescript-eslint/naming-convention` to allow _Functional Components_ in react and preact.
+
+### Fixed
+
+- Move `ecmaVersion` and `ecmaFeatures` to the `parserOptions` block, the correct one.
+- Fix lint errors and tests.
+
 ## \[0.5.0] - 2021-04-27
 
 ### Changed

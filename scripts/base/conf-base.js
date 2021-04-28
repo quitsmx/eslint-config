@@ -146,7 +146,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion,
     sourceType: 'module',
-    warnOnUnsupportedTypeScriptVersion: false,
     ecmaFeatures: {
       impliedStrict: true,
       jsx: true,
@@ -219,7 +218,7 @@ module.exports = {
       },
       {
         selector: ['function', 'method'],
-        format: ['camelCase'],
+        format: ['camelCase', 'PascalCase'],
         leadingUnderscore: 'allow',
         trailingUnderscore: 'allow',
       },

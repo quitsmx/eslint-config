@@ -1,7 +1,7 @@
 {
   "name": "@quitsmx/eslint-config",
   "description": "Customized ESLint config for TypeScript + React or Preact + Prettierx",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "index.js",
   "author": "aMarCruz <amarcruzbox-git@yahoo.com>",
   "license": "MIT",
@@ -28,20 +28,23 @@
   },
   "files": [
     "*.js",
-    "eslint-plugin-prettierx*.tgz",
-    "bin/*.js",
+    "bin",
     "dist"
   ],
   "engines": {
     "node": "^10.13 || >=12.0.0",
     "yarn": ">=1.22.5"
   },
-  "homepage": "https://github.com/quitsmx/eslint-config",
-  "repository": "git+https://github.com/quitsmx/eslint-config",
-  "bugs": "https://github.com/quitsmx/eslint-config/issues",
+  "bugs": {
+    "url": "https://github.com/quitsmx/eslint-config/issues"
+  },
+  "repository": {
+    "url": "https://github.com/quitsmx/eslint-config",
+    "type": "git"
+  },
   "scripts": {
     "build": "node scripts/create-configs",
-    "test": "eslint test",
+    "test": "eslint --report-unused-disable-directives --ext .js,.jsx,.ts,.tsx scripts test",
     "list:config": "eslint --print-config",
     "list:deprecated": "eslint-find-rules -n -d .eslintrc.json",
     "list:unused": "node ./scripts/list-unused.js"

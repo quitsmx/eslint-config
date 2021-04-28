@@ -3,7 +3,6 @@
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
-    "warnOnUnsupportedTypeScriptVersion": false,
     "ecmaFeatures": { "impliedStrict": true, "jsx": true }
   },
   "env": { "es2020": true, "commonjs": true, "shared-node-browser": true },
@@ -249,7 +248,7 @@
       },
       {
         "selector": ["function", "method"],
-        "format": ["camelCase"],
+        "format": ["camelCase", "PascalCase"],
         "leadingUnderscore": "allow",
         "trailingUnderscore": "allow"
       },

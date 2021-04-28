@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars, comma-spacing,
-   node/no-unsupported-features/es-syntax */
-
 const fun = (_a, _b, _c) => {
   /* */
 }

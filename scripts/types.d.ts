@@ -1,4 +1,3 @@
-
 type Dict<T = unknown> = Record<string, T>
 
 type RuleEntry = import('eslint').Linter.RuleEntry
@@ -31,6 +30,6 @@ declare module 'eslint-find-rules' {
   interface RuleFinder {
     getUnusedRules(): string[]
   }
-  function ruleFinderFactory(file?: string): RuleFinder
+  function ruleFinderFactory (file?: string): RuleFinder
   export = ruleFinderFactory
 }

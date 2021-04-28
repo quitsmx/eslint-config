@@ -23,7 +23,7 @@ const Test1: FunctionComponent<Props> = props => {
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
+// Functional Components names must be written in "PascalCase"
 const Foo = () => {
   //
 };

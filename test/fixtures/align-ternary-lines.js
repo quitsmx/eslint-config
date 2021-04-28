@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const abababababab = ['', '', '', '']
 
 const _abcvar1 =
