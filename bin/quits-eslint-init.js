@@ -11,9 +11,10 @@ const prettier = require('prettierx')
 const eslintConf = {
   root: true,
   extends: ['@quitsmx', '@quitsmx/eslint-config/react'],
+  ignorePatterns: ['/dist', '/patches'],
   overrides: [
     {
-      files: ['/bin', '/scripts'],
+      files: ['bin/**/*', 'scripts/**/*'],
       parserOptions: { sourceType: 'script' },
       extends: ['@quitsmx/eslint-config/node'],
     },
