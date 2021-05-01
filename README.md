@@ -3,7 +3,7 @@
 [![License][license-badge]][license-url]
 [![npm Version][npm-badge]][npm-url]
 
-[ESLint](https://eslint.org/) configuration with embeded support for [TypeScript](https://www.typescriptlang.org/) and [Prettierx](https://www.npmjs.com/package/prettierx) to be used in modern browsers, almost compatible with [StandardJS](https://standardjs.com/).
+[ESLint](https://eslint.org/) configuration with embeded support for [TypeScript](https://www.typescriptlang.org/) and [Prettierx](https://www.npmjs.com/package/prettierx) to be used in modern browsers\*, almost compatible with [StandardJS](https://standardjs.com/).
 
 Includes extra configurations for [React](https://reactjs.org/), [Preact](https://preactjs.com/) and [Node.js](https://nodejs.org/en/).
 
@@ -12,6 +12,8 @@ Includes extra configurations for [React](https://reactjs.org/), [Preact](https:
 - ESLint 7
 - TypeScript 4
 - NodeJS 10.13 or 12 and later
+
+\* A good [browserslist](https://github.com/browserslist/browserslist#best-practices) to start with is "`>= 0.15% and since 2019`" as you can [see here](https://browserslist.dev/?q=Pj0gMC4xNSUgYW5kIHNpbmNlIDIwMTk%3D).
 
 ## Included Plugins
 
@@ -43,7 +45,7 @@ Run with `npx` or `yarn` from the root of your project:
 npx quits-eslint-init
 ```
 
-Review and customize the generated .eslintrc.json, .prettierrc.json and .vscode/settings.json files.
+Review and customize the generated [.eslintrc.json](https://eslint.org/docs/user-guide/configuring/configuration-files), [.prettierrc.json](https://prettier.io/docs/en/configuration.html) and [.vscode/settings.json](https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations) files.
 
 The only required setting is `extends` in the .eslintrc file:
 
@@ -55,7 +57,7 @@ The only required setting is `extends` in the .eslintrc file:
 
 ### Extra Configurations
 
-Add to `extends[]` the configs for your environment:
+Add to `extends[]` the configurations that match your environment:
 
 | Package            | Configuration                       |
 | ------------------ | ----------------------------------- |
@@ -64,7 +66,7 @@ Add to `extends[]` the configs for your environment:
 | preact             | `@quitsmx/eslint-config/preact`     |
 | TypeScript runtime | `@quitsmx/eslint-config/ts-runtime` |
 
-For the TypeScript runtime you need to set the proyect in your ESLint config.
+For the TypeScript runtime you need to set the project in your ESLint config.
 For example:
 
 ```json
@@ -79,7 +81,8 @@ For example:
 ### Prettierx
 
 Configure Prettierx with a `.prettierrc.json` file in the root of your project.
-For example, this config used by QuITS.mx, is almost the same as StandardJS:
+
+For example, this preset used by QuITS.mx, wich we call "standardize", is similar to the one used by StandardJS:
 
 ```json
 {

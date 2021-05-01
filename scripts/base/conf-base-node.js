@@ -32,7 +32,6 @@ module.exports = {
     'node/no-missing-require': ON,
     'node/no-mixed-requires': WARN,
     'node/no-unpublished-bin': ON,
-    'node/no-unpublished-require': ON,
     'node/no-unsupported-features/es-builtins': ON,
     'node/no-unsupported-features/es-syntax': ON,
     'node/no-unsupported-features/node-builtins': ON,

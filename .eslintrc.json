@@ -1,5 +1,13 @@
 {
   "root": true,
   "parserOptions": { "sourceType": "script" },
-  "extends": ["./index.js", "./node.js", "./react.js"]
+  "extends": ["./index.js", "./node.js", "./react.js"],
+  "overrides": [
+    {
+      "files": ["./*.js", "bin/**/*"],
+      "rules": {
+        "node/no-unpublished-require": "error"
+      }
+    }
+  ]
 }

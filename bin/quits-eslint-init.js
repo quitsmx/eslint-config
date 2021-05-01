@@ -14,9 +14,23 @@ const eslintConf = {
   ignorePatterns: ['/dist', '/patches'],
   overrides: [
     {
-      files: ['bin/**/*', 'scripts/**/*'],
+      files: ['bin/**/*'],
       parserOptions: { sourceType: 'script' },
       extends: ['@quitsmx/eslint-config/node'],
+      rules: {
+        'node/no-unpublished-require': 'error',
+      },
+    },
+    {
+      files: ['./*.js', 'scripts/**/*'],
+      parserOptions: { sourceType: 'script' },
+      extends: ['@quitsmx/eslint-config/node'],
+    },
+    {
+      files: ['rollup.config.js', 'scripts/**/*.ts'],
+      rules: {
+        'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
+      },
     },
   ],
 }
