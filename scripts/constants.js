@@ -21,6 +21,7 @@ const rulesToRemove = [
   // Allow a few things that I use in development
   'no-debugger',
   'react/jsx-curly-brace-presence',
+  'react/jsx-handler-names',
 ]
 
 /**
