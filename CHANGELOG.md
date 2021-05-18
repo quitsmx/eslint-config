@@ -2,6 +2,16 @@
 
 ESLint preset for QuITS apps
 
+## \[0.5.4] - 2021-05-17
+
+### Changed
+
+- Updated dependencies
+
+### Removed
+
+- [react/jsx-handler-names](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md) because conflict with [@typescript-eslint/naming-convention](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md)
+
 ## \[0.5.3] - 2021-05-01
 
 ### Changed
