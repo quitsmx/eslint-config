@@ -2,6 +2,12 @@
 
 ESLint preset for QuITS apps
 
+## \[0.5.5] - 2021-06-09
+
+### Changed
+
+- Updated dependencies to allow TS v4.3
+
 ## \[0.5.4] - 2021-05-17
 
 ### Changed
